@@ -72,6 +72,14 @@
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="answer1Button" destination="48x-Dc-DPd" id="Qs5-Ry-oBw"/>
+                        <outlet property="answer2Button" destination="xFm-dK-5gf" id="3hB-f1-GLQ"/>
+                        <outlet property="answer3Button" destination="QiX-9o-Sfc" id="gYz-Ss-CRs"/>
+                        <outlet property="answer4Button" destination="Ibg-Li-OfW" id="mnj-qE-t2S"/>
+                        <outlet property="questionLabel" destination="Ucx-JW-SYj" id="xin-XL-Jq3"/>
+                        <outlet property="scoreLabel" destination="LnH-yq-Wkm" id="8gH-la-4Au"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

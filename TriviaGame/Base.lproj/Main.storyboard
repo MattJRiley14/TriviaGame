@@ -34,6 +34,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48x-Dc-DPd">
                                 <rect key="frame" x="16" y="318" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Answer1"/>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tz3-Pk-N5c"/>
@@ -42,6 +43,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xFm-dK-5gf">
                                 <rect key="frame" x="16" y="383" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Answer2"/>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bES-oT-P8I"/>
@@ -50,6 +52,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QiX-9o-Sfc">
                                 <rect key="frame" x="16" y="443" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Answer3"/>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dwY-66-eHl"/>
@@ -58,6 +61,7 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ibg-Li-OfW">
                                 <rect key="frame" x="16" y="499" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Answer4"/>
                                 <connections>
                                     <action selector="answerButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6e7-MP-GGK"/>

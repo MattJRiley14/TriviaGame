@@ -91,13 +91,55 @@ class ViewController: UIViewController {
         getNewQuestion()
     }
     
-    @IBAction func answerButtonTapped(_ sender: UIButton) {
+    //Shows an alert when the user get the question correct
+    func showCorrectAnswerAlert() {
+        //UIAlertController
+        let correctAlert = UIAlertController(title: "Correct", message: "\(currentQuestion.correctAnswer) was the correct answer.", preferredStyle: .actionSheet)
+        //UIAlertAction
+        let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
+            self.questionsPlaceholder.append(self.questions.remove(at: self.randomIndex))
+            self.getNewQuestion()
+        }
+        //Add action to the alert controller
+        correctAlert.addAction(closeAction)
+        //Present the alert controller
+        self.present(correctAlert, animated: true, completion: nil)
+    }
+    
+    //Shows an alert when the user get the question wrong
+    func showIncorrectAnswerAlert() {
+        //UIAlertController
+        let incorrectAlert = UIAlertController(title: "Incorrect", message: "\(currentQuestion.correctAnswer) was the correct answer.", preferredStyle: .actionSheet)
+        //UIAlertAction
+        let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
+            self.questionsPlaceholder.append(self.questions.remove(at: self.randomIndex))
+            self.getNewQuestion()
+        }
+        //Add the action to the alert controller
+        incorrectAlert.addAction(closeAction)
+        //Present the alert controller
+        self.present(incorrectAlert, animated: true, completion: nil)
     }
     
     
-    
-    
-    
-    
+    @IBAction func answerButtonTapped(_ sender: UIButton) {
+        if sender.tag == currentQuestion.correctAnswerIndex {
+            //Lets the user know they chose the correct answer
+            showCorrectAnswerAlert()
+            score += 1
+        } else {
+            //Lets the user know they chose the incorrect answer
+            showIncorrectAnswerAlert()
+        }
+    }
 }
 
+/*
+ Questions
+ 1. didSet
+ 2. UITextFieldDelegate
+ 3. Force unwrapping currentQuestion: TriviaQuestion!
+ 4. UIAlertController
+ 5. UIAlertAction
+ 6. Sender.tag
+*/

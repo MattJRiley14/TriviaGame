@@ -29,7 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             answer4Button.setTitle(currentQuestion.answers[3], for: .normal)
         }
     }
-
+    
     //Array of questions for the Trivia Game
     var questions: [TriviaQuestion] = []
     
@@ -46,14 +46,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     //This will store the index of the current question
     var randomIndex: Int!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         populateQuestions()
         getNewQuestion()
     }
-
+    
     //Popultates questions when the app loads
     func populateQuestions() {
         let question1 = TriviaQuestion(question: "What is Peter Quill's nickname?", answers: ["Ronan", "Starlord", "The Destroyer", "Eternity"], correctAnswerIndex: 1)
@@ -73,7 +73,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             currentQuestion = questions[randomIndex]
         } else {
             //If there are no questions left, then reset the game
-            resetGame()
+            let finalScore = UIAlertController(title: "You have completed all questions", message: "Final Score: \(score)", preferredStyle: .actionSheet)
+            let closeAction = UIAlertAction(title: "Close", style: .default) { _ in
+                self.resetGame()
+            }
+            finalScore.addAction(closeAction)
+            self.present(finalScore, animated: true, completion: nil)
         }
     }
     
@@ -137,7 +142,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func resetGameButtonTapped(_ sender: Any) {
         resetGame()
     }
-    
 }
 
 /*
@@ -148,4 +152,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
  4. UIAlertController
  5. UIAlertAction
  6. Sender.tag
-*/
+ */

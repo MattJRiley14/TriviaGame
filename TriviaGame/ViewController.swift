@@ -73,6 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             currentQuestion = questions[randomIndex]
         } else {
             //If there are no questions left, then reset the game
+            //Show user their final score
             let finalScore = UIAlertController(title: "You have completed all questions", message: "Final Score: \(score)", preferredStyle: .actionSheet)
             let closeAction = UIAlertAction(title: "Reset Game", style: .default) { _ in
                 self.resetGame()

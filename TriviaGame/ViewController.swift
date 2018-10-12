@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -24,9 +24,9 @@ class ViewController: UIViewController {
             //Whenever a new currentQuestion is set, update the game UI to reflect that new question
             questionLabel.text = currentQuestion.question
             answer1Button.setTitle(currentQuestion.answers[0], for: .normal)
-            answer1Button.setTitle(currentQuestion.answers[1], for: .normal)
-            answer1Button.setTitle(currentQuestion.answers[2], for: .normal)
-            answer1Button.setTitle(currentQuestion.answers[3], for: .normal)
+            answer2Button.setTitle(currentQuestion.answers[1], for: .normal)
+            answer3Button.setTitle(currentQuestion.answers[2], for: .normal)
+            answer4Button.setTitle(currentQuestion.answers[3], for: .normal)
         }
     }
 

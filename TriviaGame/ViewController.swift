@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var score = 0 {
         //Property Observer for score
         didSet {
-            scoreLabel.text = "\(score)"
+            scoreLabel.text = "Score: \(score)"
         }
     }
     

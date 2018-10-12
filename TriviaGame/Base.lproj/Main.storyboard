@@ -74,6 +74,9 @@
                                 <rect key="frame" x="275" y="20" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Reset Game"/>
+                                <connections>
+                                    <action selector="resetGameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8dV-Jq-cBJ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

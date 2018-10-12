@@ -132,6 +132,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
             showIncorrectAnswerAlert()
         }
     }
+    
+    //Allows user to reset the game at any point
+    @IBAction func resetGameButtonTapped(_ sender: Any) {
+        resetGame()
+    }
+    
 }
 
 /*

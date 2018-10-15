@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
+    
     
     //Current question being answered
     var currentQuestion: TriviaQuestion! {
@@ -58,7 +59,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func populateQuestions() {
         let question1 = TriviaQuestion(question: "What is Peter Quill's nickname?", answers: ["Ronan", "Starlord", "The Destroyer", "Eternity"], correctAnswerIndex: 1)
         let question2 = TriviaQuestion(question: "Which 3 characters came to help Vision and Scarlet Witch in Avengers: Infinity War?", answers: ["Spider-Man, Iron Man, & Doctor Strange", "Thor, Rocket, & Groot", "Captain America, Black Widow, & Falcon", "Black Panther, Okoye, & M'Baku"], correctAnswerIndex: 2)
-        let question3 = TriviaQuestion(question: "What is the name of Thor's new hammer in Avenger: Infinity War?", answers: ["Mjolnir", "Nidavellir", "Vormir", "Stormbreaker"], correctAnswerIndex: 3)
+        let question3 = TriviaQuestion(question: "What is the name of Thor's new hammer in Avengers: Infinity War?", answers: ["Mjolnir", "Nidavellir", "Vormir", "Stormbreaker"], correctAnswerIndex: 3)
         let question4 = TriviaQuestion(question: "In Avengers: Infinity War who is the last person shown fading to ash after Thanos completes the snap", answers: ["Spider-Man", "Black Panther", "Nick Fury", "Ant-Man"], correctAnswerIndex: 2)
         let question5 = TriviaQuestion(question: "What is the name of the song playing when the Guardians of the Galaxy are first shown in Avengers: Infinity War?", answers: ["Rubberband Man", "Hooked on a Feeling", "Come and Get Your Love", "Guardians Inferno"], correctAnswerIndex: 0)
         questions = [question1, question2, question3, question4, question5]
@@ -74,7 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         } else {
             //If there are no questions left, then reset the game
             //Show user their final score
-            let finalScore = UIAlertController(title: "You have completed all questions", message: "Final Score: \(score)", preferredStyle: .actionSheet)
+            let finalScore = UIAlertController(title: "You have completed all the questions", message: "Final Score: \(score) out of \(questionsPlaceholder.count)", preferredStyle: .actionSheet)
             let closeAction = UIAlertAction(title: "Reset Game", style: .default) { _ in
                 self.resetGame()
             }

@@ -144,6 +144,9 @@ class ViewController: UIViewController {
     @IBAction func resetGameButtonTapped(_ sender: Any) {
         resetGame()
     }
+    
+    //Unwind segue to main screen
+    @IBAction func unwindToQuizScreen(segue: UIStoryboardSegue) {}
 }
 
 /*

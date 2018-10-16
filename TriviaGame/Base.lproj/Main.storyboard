@@ -154,9 +154,11 @@
                                     <segment title="Four"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZg-Qn-ZAI">
-                                <rect key="frame" x="16" y="548" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EZg-Qn-ZAI">
+                                <rect key="frame" x="16" y="587" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="7cu-P1-sjf"/>
+                                </constraints>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonTapped:" destination="eTr-sl-AqZ" eventType="touchUpInside" id="PSt-2b-2hO"/>
@@ -176,14 +178,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEo-c8-dkG">
-                                <rect key="frame" x="16" y="617" width="141" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back to Main Screen"/>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="URU-zO-Ikj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Your Own Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZG-DO-ZYl">
                                 <rect key="frame" x="16" y="51" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -191,8 +185,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmk-GL-qva">
+                                <rect key="frame" x="16" y="20" width="143" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back To Main Screen"/>
+                                <connections>
+                                    <segue destination="OJf-ep-fex" kind="unwind" unwindAction="unwindToQuizScreenWithSegue:" id="AWm-hQ-36b"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pxe-gx-tLP" firstAttribute="bottom" secondItem="EZg-Qn-ZAI" secondAttribute="bottom" constant="50" id="iCn-YF-kZI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Pxe-gx-tLP"/>
                     </view>
                     <connections>
@@ -200,10 +205,13 @@
                         <outlet property="userAnswer2TextField" destination="LF8-gF-Kfk" id="qYo-PV-aGC"/>
                         <outlet property="userAnswer3TextField" destination="B3l-MV-wtJ" id="rsE-fR-Wy0"/>
                         <outlet property="userAnswer4TextField" destination="ap7-3N-1hC" id="a64-Xf-HX7"/>
+                        <outlet property="userCorrectAnswerSegmentedControl" destination="93i-Dp-esB" id="mzL-tv-Mo2"/>
                         <outlet property="userQuestionTextField" destination="Tu2-P5-uIH" id="gKi-6E-Pue"/>
+                        <segue destination="OJf-ep-fex" kind="unwind" identifier="unwindToQuizScreen" unwindAction="unwindToQuizScreenWithSegue:" id="mDb-Hi-9in"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FrZ-Xm-9Pr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="OJf-ep-fex" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="904.79999999999995" y="133.5832083958021"/>
         </scene>

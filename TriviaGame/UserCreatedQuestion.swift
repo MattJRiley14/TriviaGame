@@ -41,6 +41,7 @@ class UserCreatedQuestion: UIViewController {
         }
     }
     
+    //Error shows when user doesn't fill out all fields
     func showErrorAlert() {
         let errorAlert = UIAlertController(title: "Error", message: "Please enter text in all fields", preferredStyle: .actionSheet)
         let dismissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
@@ -62,6 +63,7 @@ class UserCreatedQuestion: UIViewController {
         
         newQuestion = TriviaQuestion(question: question, answers: [answer1, answer2, answer3, answer4], correctAnswerIndex: userCorrectAnswerSegmentedControl.selectedSegmentIndex)
         
+        //Permforms segue back to main screen
         self.performSegue(withIdentifier: "unwindToQuizScreen", sender: self)
     }
 }
